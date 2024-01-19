@@ -40,19 +40,19 @@ const styles = StyleSheet.create({
   },
   imagecontainer: {
     flex: 3,
-    justifyContent: 'center', // Add this line
-    alignItems: 'center', // Add this line
+    justifyContent: 'center', 
+    alignItems: 'center', 
     // backgroundColor: "#0a3504",
   },
   image: {
     height: 450,
     width: 350,
-    resizeMode: "contain", // Change this to 'contain' to avoid cropping
-    alignSelf: 'center', // Add this line
+    resizeMode: "contain", 
+    alignSelf: 'center', 
   },
   linkscontainer: {
     flex: 2,
-    justifyContent: "space-evenly", // Change this to space-evenly
+    justifyContent: "space-evenly", 
     alignItems: "center",
     backgroundColor: "#0f4b07",
     borderWidth: 3,
@@ -61,14 +61,14 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   textWrapper: {
-    borderWidth: 1, // Set your desired border width
-    borderColor: 'black', // Set your desired border color
-    padding: 10, // Add padding to make it look better
-    width: '80%', // Set width as per your design preference
-    marginBottom: 10, // Add margin at the bottom
+    borderWidth: 1, 
+    borderColor: 'black', 
+    padding: 10, 
+    width: '80%', 
+    marginBottom: 10, 
   },
   text: {
     fontSize: 15,
-    textAlign: 'center', // Add this line to center text
+    textAlign: 'center', 
   },
 });
