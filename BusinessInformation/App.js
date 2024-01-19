@@ -17,7 +17,7 @@ export default function App() {
             <Text style={styles.text}>Evan Aarons-Wood</Text>
           </View>
           <View style={styles.textWrapper}>
-            <Text style={styles.text} onPress={() => Linking.openURL("mail:evanaaronswood@gmail.com")}>evanaaronswood@gmail.com</Text>
+            <Text style={styles.text} onPress={() => Linking.openURL("mailto:evanaaronswood@gmail.com")}>evanaaronswood@gmail.com</Text>
           </View>
           <View style={styles.textWrapper}>
             <Text style={styles.text} onPress={() => Linking.openURL("tel:+18432314126")}>(843) 231-4126</Text>
