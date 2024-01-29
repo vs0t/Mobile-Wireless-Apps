@@ -12,18 +12,18 @@ import {
 } from "react-native";
 
 export default function App() {
-  // State for modal visibility, initially not visible
+  // state for modal visibility, initially not visible
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
-  // State to hold the user's question
+  // state to hold the user's question
   const [userQuestion, setUserQuestion] = useState("");
 
-  // State to hold the magic 8 ball's response
+  // state to hold the magic 8 ball's response
   const [magicAnswer, setMagicAnswer] = useState("");
 
-  // Function to handle the magic answer request
+  // function to handle the magic answer request
   const handlePress = () => {
-    // Array of possible magic 8 ball responses
+    // array of possible magic 8 ball responses
     const responses = [
       "Yes",
       "No",
@@ -34,26 +34,31 @@ export default function App() {
       "Try again",
       "Without a doubt",
     ];
-    // Selecting a random response from the array
+    // selecting a random response from the array
     const randomResponse =
       responses[Math.floor(Math.random() * responses.length)];
-    setMagicAnswer(randomResponse); // Setting the magic answer state
-    setModalIsVisible(true); // Showing the modal with the answer
+    // setting the magic answer state
+    setMagicAnswer(randomResponse);
+    // showing the modal with the answer
+    setModalIsVisible(true);
   };
 
-  // Function to close the modal and reset states
+  // function to close the modal and reset states
   const closeModal = () => {
-    setModalIsVisible(false); // Hiding the modal
-    setUserQuestion(""); // Resetting the user question
-    setMagicAnswer(""); // Resetting the magic answer
+    // hiding the modal
+    setModalIsVisible(false);
+    // resetting the user question
+    setUserQuestion("");
+    // resetting the magic answer
+    setMagicAnswer("");
   };
 
   return (
     <>
       <StatusBar style="auto" />
-      {/* Main app container */}
+      {/* main app container */}
       <SafeAreaView style={styles.container}>
-        {/* Container for the 8 ball image */}
+        {/* container for the 8 ball image */}
         <View style={styles.imagecontainer}>
           <Image
             style={styles.image}
@@ -61,40 +66,45 @@ export default function App() {
           />
         </View>
 
-        {/* Container for the app title */}
+        {/* container for the app title */}
         <View>
           <Text style={styles.title}>8-Ball App</Text>
         </View>
 
-        {/* Container for the user input */}
+        {/* container for the user input */}
         <View>
           <TextInput
             style={styles.input}
             placeholder="Enter your question here!"
-            onChangeText={setUserQuestion} // Updating user question state on change
+            // updating user question state on change
+            onChangeText={setUserQuestion}
+            // displaying current user question
             value={userQuestion} // Displaying current user question
             placeholderTextColor="#CCCCCC"
           />
         </View>
 
-        {/* Container for the submit button */}
+        {/* container for the submit button */}
         <View>
           <Button
             title="Request Magic Answer"
-            onPress={handlePress} // Handling press to show magic answer
+            // handling press to show magic answer
+            onPress={handlePress}
           />
         </View>
 
-        {/* Modal to display the magic answer */}
+        {/* modal to display the magic answer */}
         <Modal visible={modalIsVisible} animationType="fade">
           <SafeAreaView style={styles.modalContainer}>
-            {/* Displaying the user's question */}
+            {/* displaying the user's question */}
             <Text style={styles.modalText}>Your Question: {userQuestion}</Text>
-            {/* Displaying the magic 8 ball's response */}
+
+            {/* displaying the magic 8 ball's response */}
             <Text style={styles.modalText}>
               Magic 8 Ball Says: {magicAnswer}
             </Text>
-            {/* Button to close the modal */}
+
+            {/* button to close the modal */}
             <Button title="Close" onPress={closeModal} />
           </SafeAreaView>
         </Modal>
