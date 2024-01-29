@@ -79,7 +79,7 @@ export default function App() {
             // updating user question state on change
             onChangeText={setUserQuestion}
             // displaying current user question
-            value={userQuestion} // Displaying current user question
+            value={userQuestion}
             placeholderTextColor="#CCCCCC"
           />
         </View>
