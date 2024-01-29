@@ -85,12 +85,10 @@ export default function App() {
         </View>
 
         {/* container for the submit button */}
-        <View>
-          <Button
-            title="Request Magic Answer"
-            // handling press to show magic answer
-            onPress={handlePress}
-          />
+        <View style={styles.buttonContainer}>
+          <Button 
+          color="#9821c7"
+          title="Request Magic Answer" onPress={handlePress} />
         </View>
 
         {/* modal to display the magic answer */}
@@ -121,9 +119,10 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   title: {
-    fontSize: 24,
+    fontSize: 40,
     color: "white",
-    marginTop: 10,
+    marginTop: 1,
+    marginBottom: 175,
   },
   input: {
     height: 40,
@@ -132,7 +131,7 @@ const styles = StyleSheet.create({
     padding: 10,
     color: "white",
     borderColor: "white",
-    width: "80%",
+    width: 380,
   },
   imagecontainer: {
     justifyContent: "center",
@@ -152,8 +151,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#3a1449",
   },
   modalText: {
-    fontSize: 20,
+    fontSize: 18,
+    fontStyle: "italic",
     color: "white",
     marginBottom: 20,
+  },
+  buttonContainer: {
+    marginTop: 20, 
+    width: "40%", 
+    alignSelf: "center", 
+    color: "#802ac7"
   },
 });
