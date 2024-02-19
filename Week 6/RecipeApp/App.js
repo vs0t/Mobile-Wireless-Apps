@@ -17,17 +17,18 @@ export default function App() {
   // set state forcurrent screen
   const [currentScreen, setCurrentScreen] = useState("home");
   const [currentID, setCurrentID] = useState(3);
+  // recipe list
   const [currentRecipe, setCurrentRecipe] = useState([
     {
       id: 1,
-      title: "Spaghetti",
-      text: "1. Pasta\n2. Sauce\n3. Ground Beef\n4. Oregano, Salt, Pepper",
-    },
-    {
-      id: 2,
       title: "Southern Style Ham Sandwhich",
       text: "1. Wheat Bread\n2. Ham\n3. Mayo\n4. Mustard",
     },
+    {
+      id: 2,
+      title: "Classic Chicken Salad",
+      text: "Ingredients:\n- 2 cups shredded chicken\n- 1/2 cup diced celery\n- 1/2 cup mayonnaise\n- 1 tablespoon lemon juice\n- Salt and pepper to taste\n\nInstructions:\n1. In a mixing bowl, combine the shredded chicken and diced celery.\n2. Add the mayonnaise and lemon juice to the mixture.\n3. Season with salt and pepper.\n4. Stir until all ingredients are well combined.\n5. Refrigerate for at least 30 minutes before serving to allow flavors to meld."
+    },    
   ]);
 
   function recipeScreenHandler() {
@@ -41,15 +42,17 @@ export default function App() {
   function addScreenHandler() {
     setCurrentScreen("add");
   }
+  // function for adding a recipe to the list
   function addRecipeHandler(enteredRecipeTitle, enteredRecipeText) {
     setCurrentRecipe((currentRecipe) => {
       return [...currentRecipe, {id: currentID, title: enteredRecipeTitle, text: enteredRecipeText },
       ];
     });
     setCurrentID(currentID + 1);
+    // re open recipe screen to simulate the record saving
     recipeScreenHandler();
   }
-
+// function for deleting recipe
   function deleteRecipeHandler(id) {
     setCurrentRecipe((currentRecipes) => {
       return currentRecipes.filter((item) => item.id !== id);
@@ -58,6 +61,7 @@ export default function App() {
     // recipeScreenHandler();
   }
 
+  // function for viewing recipe
   function viewRecipeHandler(recipeId) {
     const recipeToView = currentRecipe.find(recipe => recipe.id === recipeId);
     setSelectedRecipe(recipeToView);

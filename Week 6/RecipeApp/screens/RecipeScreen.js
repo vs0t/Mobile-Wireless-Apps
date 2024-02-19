@@ -64,6 +64,7 @@ function HomeScreen(props) {
                     return item.id;
                 }}
                 alwaysBounceVertical={false}
+                // render in the recipes, and the buttons to interact with them respectively
                 renderItem={(itemData) => {
                     return (
                         <RecipeItem
@@ -76,12 +77,12 @@ function HomeScreen(props) {
                 }}
                 />
             </View>
-
+            {/* area for home and adding button */}
             <View style={styles.buttonContainer}>
                 <NavButton onNext={props.onHome}>Home</NavButton>
                 <NavButton onNext={props.onAdd}>Add Recipe</NavButton>
             </View>
-
+            {/* area for modal to display the information of the recipe */}
             <RecipeModal
                 visible={modalIsVisible}
                 title={modalRecipeTitle}

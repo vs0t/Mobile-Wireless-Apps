@@ -5,7 +5,7 @@ import { View, StyleSheet, Text, Image, FlatList, Button } from "react-native";
 
 
 function RecipeItem(props) {
-
+    // display the actual recipies on the page
     return(
         <View style={styles.itemContainer}>
             <View style={styles.titleContainer}>
