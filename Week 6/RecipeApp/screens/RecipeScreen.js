@@ -4,6 +4,9 @@ import Title from "../components/Title";
 import NavButton from "../components/NavButton";
 import { useState } from "react";
 import RecipeItem from "../components/RecipeItems";
+import Colors from '../constants/colors';
+import RecipeModal from "../modals/RecipeModal";
+
 
 
 
@@ -11,22 +14,35 @@ import RecipeItem from "../components/RecipeItems";
 function HomeScreen(props) {
     // set safe area screen boundaries
     const insets = useSafeAreaInsets();
+    const [modalIsVisible, setModalIsVisible] = useState(false);
+    const [modalRecipeTitle, setmodalRecipeTitle] = useState("");
+    const [modalRecipeText, setmodalRecipeText] = useState("");
+
     function recipeViewHandler(title, text){
-        setModalNoteTitle(title),
-        setModalNoteText(text)
-      }
-    const [currentRecipe, setCurrentRecipe] = useState([
-        {
-          id: 1,
-          title: "Spaghetti",
-          text: "1. Pasta\n2. Sauce\n3. Ground Beef\n4. Oregano, Salt, Pepper",
-        },
-        {
-          id: 2,
-          title: "Southern Style Ham Sandwhich",
-          text: "1. Wheat Bread\n2. Ham\n3. Mayo\n4. Mustard",
-        },
-      ]);
+        setmodalRecipeTitle(title);
+        setmodalRecipeText(text);
+        setModalIsVisible(true);
+    }
+
+    function closeRecipeViewHandler(){
+        setModalIsVisible(false);
+    }
+    // function recipeViewHandler(title, text){
+    //     setModalNoteTitle(title),
+    //     setModalNoteText(text)
+    //   }
+    // const [currentRecipe, setCurrentRecipe] = useState([
+    //     {
+    //       id: 1,
+    //       title: "Spaghetti",
+    //       text: "1. Pasta\n2. Sauce\n3. Ground Beef\n4. Oregano, Salt, Pepper",
+    //     },
+    //     {
+    //       id: 2,
+    //       title: "Southern Style Ham Sandwhich",
+    //       text: "1. Wheat Bread\n2. Ham\n3. Mayo\n4. Mustard",
+    //     },
+    //   ]);
     return (
         <View style={[
             styles.rootContainer,
@@ -43,19 +59,18 @@ function HomeScreen(props) {
 
             <View>
                 <FlatList
-                data = {currentRecipe}
-
-                keyExtractor={(item) => item.id}
-
+                data = {props.currentRecipe}
+                keyExtractor={(item, index) => {
+                    return item.id;
+                }}
                 alwaysBounceVertical={false}
-                showsVerticalScrollIndicator={false}
                 renderItem={(itemData) => {
-                    return(
+                    return (
                         <RecipeItem
-                            title={itemData.item.title}
-                            // text={itemData.item.text}
-                            onView={recipeViewHandler}
-                            onDelete={props.onDel.bind(this, itemData.item.id)}
+                        id={itemData.item.id}
+                        title={itemData.item.title}
+                        onView={recipeViewHandler.bind(this, itemData.item.title, itemData.item.text)}
+                        onDelete={props.onDelete.bind(this, itemData.item.id)}
                         />
                     );
                 }}
@@ -63,9 +78,16 @@ function HomeScreen(props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <NavButton onPress={props.onHome}>Home</NavButton>
-                <NavButton onPress={props.onAdd}>Add Recipe</NavButton>
+                <NavButton onNext={props.onHome}>Home</NavButton>
+                <NavButton onNext={props.onAdd}>Add Recipe</NavButton>
             </View>
+
+            <RecipeModal
+                visible={modalIsVisible}
+                title={modalRecipeTitle}
+                text={modalRecipeText}
+                onClose={closeRecipeViewHandler}
+            />
 
 
         </View>

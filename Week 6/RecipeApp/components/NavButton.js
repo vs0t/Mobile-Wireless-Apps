@@ -6,7 +6,7 @@ function NavButton(props){
     return(
         <Pressable
         android_ripple={{color: "grey"}}
-        onPress={props.onPress}>
+        onPress={props.onNext}>
             <View style={styles.buttonContainer}>
                 <View style={styles.textContainer}>
                     <Text style={styles.text}>{props.children}</Text>

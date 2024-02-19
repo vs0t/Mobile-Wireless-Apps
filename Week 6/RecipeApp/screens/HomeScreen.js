@@ -2,6 +2,9 @@ import { View, StyleSheet, Text, Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Title from "../components/Title";
 import NavButton from "../components/NavButton";
+import Colors from '../constants/colors';
+import RecipeModal from "../modals/RecipeModal";
+
 
 
 function HomeScreen(props) {
@@ -29,8 +32,10 @@ function HomeScreen(props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <NavButton onPress={props.onNext}>View Recipes</NavButton>
+                <NavButton onNext={props.onNext}>View Recipes</NavButton>
             </View>
+
+            
 
 
         </View>

@@ -17,14 +17,15 @@ function RecipeItem(props) {
                 <Button title="Delete" onPress={props.onDelete} />
             </View>
         </View>
-    )
+    );
 }
 
 export default RecipeItem;
 
 styles = StyleSheet.create({
     itemContainer: {
-        marginBottom: 20
+        marginBottom: 20,
+        // flexDirection: 'row'
     },
     titleContainer: {
         backgroundColor: Colors.accent800,

@@ -1,31 +1,28 @@
 // RecipeModal.js
-import React from 'react';
-import { Modal, View, Text, Button, StyleSheet } from 'react-native';
+import React from "react";
+import { Modal, View, Text, Button, StyleSheet } from "react-native";
+import NavButton from "../components/NavButton";
 
-const RecipeModal = ({ visible, onClose, recipe }) => {
+function RecipeModal(props) {
   return (
-    <Modal visible={visible} animationType="slide" transparent={true}>
+    <Modal visible={props.visible} animationType="slide" transparent={true}>
       <View style={styles.modalCenteredView}>
         <View style={styles.modalView}>
-          {recipe && (
-            <>
-              <Text style={styles.modalTitle}>{recipe.title}</Text>
-              <Text>{recipe.text}</Text>
-              <Button title="Close" onPress={onClose} />
-            </>
-          )}
+          <Text style={styles.modalTitle}>{props.title}</Text>
+          <Text>{props.text}</Text>
+          <NavButton onNext={props.onClose}>Return</NavButton>
         </View>
       </View>
     </Modal>
   );
-};
+}
 
 const styles = StyleSheet.create({
   modalCenteredView: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 22
+    marginTop: 22,
   },
   modalView: {
     margin: 20,
@@ -36,17 +33,17 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5
+    elevation: 5,
   },
   modalTitle: {
     marginBottom: 15,
     textAlign: "center",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   // Add more styles as needed
 });

@@ -42,19 +42,20 @@ export default function App() {
     setCurrentScreen("add");
   }
   function addRecipeHandler(enteredRecipeTitle, enteredRecipeText) {
-    setCurrentRecipe(currentRecipes => {
-      const newRecipeId = currentRecipes.reduce((maxId, recipe) => Math.max(recipe.id, maxId), 0) + 1;
-      const newRecipe = { id: newRecipeId, title: enteredRecipeTitle, text: enteredRecipeText };
-      return [...currentRecipes, newRecipe];
+    setCurrentRecipe((currentRecipe) => {
+      return [...currentRecipe, {id: currentID, title: enteredRecipeTitle, text: enteredRecipeText },
+      ];
     });
+    setCurrentID(currentID + 1);
+    recipeScreenHandler();
   }
 
   function deleteRecipeHandler(id) {
     setCurrentRecipe((currentRecipes) => {
-      return currentRecipes.filter(recipe => recipe.id !== id);
-    });
+      return currentRecipes.filter((item) => item.id !== id);
+    })
     
-    recipeScreenHandler();
+    // recipeScreenHandler();
   }
 
   function viewRecipeHandler(recipeId) {
@@ -72,10 +73,24 @@ export default function App() {
   let screen = <HomeScreen onNext={recipeScreenHandler}/>;
 
   if (currentScreen === "recipe"){
-    screen = <RecipeScreen onHome={homeScreenHandler} onAdd={addScreenHandler} onDel={deleteRecipeHandler} onView={viewRecipeHandler} onClose={closeModal}/>
+    screen = <RecipeScreen 
+    onHome={homeScreenHandler} 
+    onAdd={addScreenHandler}
+    currentRecipe={currentRecipe}
+    onDelete={deleteRecipeHandler}
+    // onClose={closeModal}
+    />
   } 
   if (currentScreen === "add"){
-    screen = <AddRecipe onHome={homeScreenHandler} onRecipe={recipeScreenHandler}/>
+    screen = <AddRecipe 
+    onHome={homeScreenHandler} 
+    onRecipe={recipeScreenHandler} 
+    onAdd={addRecipeHandler} 
+    onDelete={deleteRecipeHandler} 
+    onView={viewRecipeHandler} 
+    // onClose={closeModal}
+    currentRecipe={currentRecipe}
+    />
   }
 
   return (
