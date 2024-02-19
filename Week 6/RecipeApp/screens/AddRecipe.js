@@ -24,7 +24,7 @@ function AddRecipe(props) {
     // function to add new recipe to list
     function addRecipeHandler() {
         props.onAdd(recipeTitle, recipeText);
-        props.onCancel();
+        props.onRecipe();
     }
     return (
         <View style={[
