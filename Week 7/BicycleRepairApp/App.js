@@ -4,10 +4,20 @@ import { useState, useMemo } from "react";
 import Colors from "./constants/colors";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import HomeScreen from "./screens/HomeScreen";
+import { useFonts } from 'expo-font';
+
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState("home");
   const [currentPrice, setCurrentPrice] = useState(0);
+  const [fontsLoaded] = useFonts({
+    "squealer": require("./assets/fonts/Squealer.otf"),
+    "valkids": require("./assets/fonts/Valkids.ttf"),
+    "moglite": require("./assets/fonts/Mogilte.otf"),
+    "lemonmilklight": require("./assets/fonts/LEMONMILK-Light.otf"),
+    "lemonmilkbold": require("./assets/fonts/LEMONMILK-Bold.otf"),
+    "lemonmilkmeditalic": require("./assets/fonts/LEMONMILK-MediumItalic.otf"),
+  })
 
   const repairTimeRadioButtons = useMemo(
     () => [
@@ -55,12 +65,45 @@ export default function App() {
   const [newsletter, setNewsletter] = useState(false);
   const [rentalMembership, setRentalMembership] = useState(false);
 
-  let screen = <HomeScreen />
+  function setServiceOptionsHandler(id) {
+    setServiceOptions((prevTimes) =>
+      prevTimes.map((item) =>
+        item.id === id ? { ...item, value: !item.value } : item
+      )
+    );
+  }
+
+  function setSignUpHandler() {
+    setSignUpHandler((previous) => !previous)
+  }
+
+  function setRentalSignUpHandler() {
+    setSignUpHandler((previous) => !previous)
+  }
+
+  let screen = (
+    <HomeScreen
+      newsletter={newsletter}
+      setNewsletter={setNewsletter}
+      setNewsletterSign={setSignUpHandler}
+      setRentalSign={setRentalSignUpHandler}
+      rentalMembership={rentalMembership}
+      setRentalMembership={setRentalMembership}
+      currentPrice={currentPrice}
+      setCurrentPrice={setCurrentPrice}
+      services={services}
+      setServices={setServices}
+      setServicesOptions={setServiceOptionsHandler}
+      repairTimeRadioButtons={repairTimeRadioButtons}
+      repairTimeId={repairTimeId}
+      setRepairTimeId={setRepairTimeId}
+    />
+  );
 
   return (
     <>
-    <StatusBar style="dark" />
-    <SafeAreaProvider style={styles.container}>{screen}</SafeAreaProvider>
+      <StatusBar style="dark" />
+      <SafeAreaProvider style={styles.container}>{screen}</SafeAreaProvider>
     </>
   );
 }
@@ -68,7 +111,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: Colors.accent500,
     alignItems: "center",
     justifyContent: "center",
   },

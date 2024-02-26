@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 50,
         textAlign: 'center',
-        color: Colors.primary500,
-        fontFamily: "squealer",
+        color: Colors.primary300,
+        fontFamily: "moglite",
     }
 })
