@@ -1,16 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import Colors from "./constants/colors";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import HomeScreen from "./screens/HomeScreen";
 import { useFonts } from 'expo-font';
+import OrderReviewScreen from "./screens/OrderReviewScreen";
 
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState("home");
   const [currentPrice, setCurrentPrice] = useState(0);
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     "squealer": require("./assets/fonts/Squealer.otf"),
     "valkids": require("./assets/fonts/Valkids.ttf"),
     "moglite": require("./assets/fonts/Mogilte.otf"),
@@ -18,6 +19,12 @@ export default function App() {
     "lemonmilkbold": require("./assets/fonts/LEMONMILK-Bold.otf"),
     "lemonmilkmeditalic": require("./assets/fonts/LEMONMILK-MediumItalic.otf"),
   })
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded || fontError) {
+      await SplashScreen.hideAsynch();
+    }
+  }, [fontsLoaded, fontError])
 
   const repairTimeRadioButtons = useMemo(
     () => [
@@ -66,7 +73,7 @@ export default function App() {
   const [rentalMembership, setRentalMembership] = useState(false);
 
   function setServiceOptionsHandler(id) {
-    setServiceOptions((prevTimes) =>
+    setServices((prevTimes) =>
       prevTimes.map((item) =>
         item.id === id ? { ...item, value: !item.value } : item
       )
@@ -74,11 +81,47 @@ export default function App() {
   }
 
   function setSignUpHandler() {
-    setSignUpHandler((previous) => !previous)
+    setNewsletter((previous) => !previous)
   }
 
   function setRentalSignUpHandler() {
-    setSignUpHandler((previous) => !previous)
+    setRentalMembership((previous) => !previous)
+  }
+
+  function homeScreenHandler() {
+    setCurrentPrice(0);
+    setCurrentScreen("home");
+    setRepairTimeId("");
+    setNewsletter(false);
+    setRentalMembership(false);
+    setServices(services.map(service => ({ ...service, value: false })));
+  }
+
+  function orderReviewHandler() {
+
+    let price = 0;
+    for (let i = 0; i < services.length; i++) {
+      if (services[i].value){
+        price = price + services[i].price
+      }
+    }
+
+    if (newsletter){
+      price = price + 0;
+    }
+
+    if (rentalMembership){
+      price = price + 100;
+    }
+
+    price = price + repairTimeRadioButtons[repairTimeId].price
+
+    setCurrentPrice(price);
+
+
+
+    if (repairTimeId)
+    setCurrentScreen("review")
   }
 
   let screen = (
@@ -97,15 +140,40 @@ export default function App() {
       repairTimeRadioButtons={repairTimeRadioButtons}
       repairTimeId={repairTimeId}
       setRepairTimeId={setRepairTimeId}
+      onNext={orderReviewHandler}
     />
   );
 
-  return (
-    <>
-      <StatusBar style="dark" />
-      <SafeAreaProvider style={styles.container}>{screen}</SafeAreaProvider>
-    </>
-  );
+  if (currentScreen == "review") {
+    screen = (
+      <OrderReviewScreen 
+      rentalMem={rentalMembership}
+      news={newsletter}
+      times={repairTimeRadioButtons[repairTimeId].value}
+      service={services}
+      price={currentPrice}
+      onNext={homeScreenHandler}
+      />
+    )
+  }
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  } else {
+    return (
+      <>
+        <StatusBar style="dark" />
+        <SafeAreaProvider style={styles.container}>{screen}</SafeAreaProvider>
+      </>
+    );
+  }
+
+  // return (
+  //   <>
+  //     <StatusBar style="dark" />
+  //     <SafeAreaProvider style={styles.container}>{screen}</SafeAreaProvider>
+  //   </>
+  // );
 }
 
 const styles = StyleSheet.create({

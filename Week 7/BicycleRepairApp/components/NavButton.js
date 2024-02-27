@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         borderRadius: 300,
         width: 300,
         margin: 10,
-        backgroundColor: Colors.primary500,
+        backgroundColor: Colors.primary300,
     },
     pressedItem: {
         opacity: 0.3,
