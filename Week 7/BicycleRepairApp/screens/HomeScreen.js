@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet, Switch } from "react-native";
+import { View, Text, ScrollView, StyleSheet, Switch, ImageBackground } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Title from "../components/Title";
 import { RadioGroup } from "react-native-radio-buttons-group";
@@ -10,7 +10,13 @@ function HomeScreen(props) {
   const insets = useSafeAreaInsets();
 
   return (
-    <View
+    // begin of image background per request
+    <ImageBackground
+    source={require("../assets/images/home.jpg")}
+    resizeMode="cover"
+    style={styles.rootContainer}
+    >
+      <View
       style={[
         styles.rootContainer,
         {
@@ -28,6 +34,7 @@ function HomeScreen(props) {
       <ScrollView style={styles.scrollContainer}>
         <View style={styles.radioContainer}>
           <Text style={styles.radioHeader}>Service Times</Text>
+          {/* radio button area for selecting times */}
           <RadioGroup
             radioButtons={props.repairTimeRadioButtons}
             onPress={props.setRepairTimeId}
@@ -41,6 +48,7 @@ function HomeScreen(props) {
           <View style={styles.checkBoxContainer}>
             <Text style={styles.checkBoxHeader}>Service Options</Text>
             <View style={styles.checkBoxSubContainer}>
+              {/* map to make a checkbox from mapped items from the constants on app.js */}
               {props.services.map((item) => {
                 return <BouncyCheckbox 
                 key={item.id}
@@ -73,6 +81,7 @@ function HomeScreen(props) {
               <View style={styles.addonContainer}>
                   <View style={styles.addonSubContainer}>
                       <Text style={styles.addOnLabel}>News Letter Signup</Text>
+                      {/* switch for first sign up */}
                       <Switch 
                       onValueChange={props.setNewsletterSign}
                       value={props.newsletter}
@@ -84,6 +93,7 @@ function HomeScreen(props) {
                   </View>
                   <View style={styles.addonSubContainer}>
                       <Text style={styles.addOnLabel}>Rental Membership Signup</Text>
+                      {/* switch for second sign up */}
                       <Switch 
                       onValueChange={props.setRentalSign}
                       value={props.rentalMembership}
@@ -100,6 +110,8 @@ function HomeScreen(props) {
         </View>
       </ScrollView>
     </View>
+    </ImageBackground>
+    
   );
 }
 
@@ -112,7 +124,7 @@ const styles = StyleSheet.create({
   radioHeader: {
     fontFamily: "lemonmilkbold",
     fontSize: 25,
-    color: Colors.primary800,
+    color: Colors.primary300,
   },
   titleContainer: {
     paddingHorizontal: 30,
@@ -148,6 +160,7 @@ const styles = StyleSheet.create({
   checkBoxHeader: {
     fontFamily: "lemonmilkbold",
     fontSize: 25,
+    color: Colors.primary300,
   },
   checkBoxSubContainer: {
     padding: 2,
@@ -166,7 +179,7 @@ const styles = StyleSheet.create({
     padding: 15,
     justifyContent: "center",
     alignItems: "center",
-    color: Colors.accent800,
+    color: Colors.primary300,
   },
   buttonContainer: {
     alignItems: "center",

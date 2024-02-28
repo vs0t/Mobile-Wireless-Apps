@@ -6,6 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import HomeScreen from "./screens/HomeScreen";
 import { useFonts } from 'expo-font';
 import OrderReviewScreen from "./screens/OrderReviewScreen";
+import LinearGradient from "react-native-linear-gradient";
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
     "lemonmilkmeditalic": require("./assets/fonts/LEMONMILK-MediumItalic.otf"),
   })
 
+  // function to make sure fonts load before app attempts to 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded || fontError) {
       await SplashScreen.hideAsynch();
@@ -88,6 +90,7 @@ export default function App() {
     setRentalMembership((previous) => !previous)
   }
 
+  // home screen handler, takes back to homescreen and resets the price, and all selected options and the map so their choices arent stored
   function homeScreenHandler() {
     setCurrentPrice(0);
     setCurrentScreen("home");
@@ -97,6 +100,7 @@ export default function App() {
     setServices(services.map(service => ({ ...service, value: false })));
   }
 
+  // order handler to calculate prices for selected items and apply to the working total
   function orderReviewHandler() {
 
     let price = 0;
