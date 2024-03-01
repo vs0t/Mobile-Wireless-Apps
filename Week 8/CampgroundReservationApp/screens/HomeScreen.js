@@ -379,6 +379,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: Colors.primary300,
     fontFamily: "lemonmilkmeditalic",
+    textShadowColor: "red",
+    textShadowOffset: {width: 2, height: 2 },
+    textShadowRadius: 2,
   },
   centeredModalView: {
     flex: 1,
