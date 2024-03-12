@@ -17,6 +17,7 @@ function DestinaitionReviewScreen(props){
     });
 
     function renderDestinationItem(itemData){
+        // grab all of the necessary data for props to pass to project from dummy-data
         const destinationItemProps = {
             name: itemData.item.name,
             imageUrl: itemData.item.imageUrl,

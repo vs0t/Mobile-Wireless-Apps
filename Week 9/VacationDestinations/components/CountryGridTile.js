@@ -2,6 +2,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Pressable, View, StyleSheet, Platform, Text } from "react-native";
 import Colors from "../constants/colors";
 
+// funciton to display all of the countries on a linear gradient, using props from dummy data
 function CountryGridTile(props) {
   return (
     <View style={styles.gridItem}>

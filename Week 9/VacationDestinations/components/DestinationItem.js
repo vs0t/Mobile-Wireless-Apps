@@ -23,6 +23,7 @@ function DestinationItem(props){
             {backgroundColor: props.listIndex % 2 === 0 ? "#ccc" : "#643636"}
         ]}
         >
+          {/* button to contain the basic information, holds props from dummy-data, onlcick opens the imageviewmodal with the sleected items details */}
             <Pressable
             style={({ pressed }) => [
                 styles.button,
@@ -44,6 +45,7 @@ function DestinationItem(props){
                 </View>
             </Pressable>
 
+            {/* opens the modal passing the buttons data */}
             <ImageViewModal 
             isVisible={modalIsVisible}
             imageUrl={props.imageUrl}

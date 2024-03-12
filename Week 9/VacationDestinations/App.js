@@ -22,6 +22,7 @@ export default function App() {
     lemonmilkmeditalic: require("./assets/fonts/LEMONMILK-MediumItalic.otf"),
     mountain: require("./assets/fonts/Mountain.ttf"),
     poker: require("./assets/fonts/Poker.ttf"),
+    canada: require("./assets/fonts/Canada.otf")
   });
 
   const onLayoutRootView = useCallback(async () => {

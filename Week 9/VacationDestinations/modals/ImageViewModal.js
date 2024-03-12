@@ -10,6 +10,7 @@ function ImageViewModal(props) {
         transparent={false}
       >
         <View style={styles.modalContainer}>
+          {/* pulls the image and desc thru props sent from previous */}
           <Image style={styles.image} source={{ uri: props.imageUrl }} />
           <Text style={styles.description}>{props.description}</Text>
           <Button title="Return to Destinations" onPress={props.onClose} />
@@ -35,17 +36,17 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: "80%",
+    height: 300,
     resizeMode: "contain",
   },
   description: {
-    fontFamily: "lemonmilkmeditalic",
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 20,
-    borderWidth: 2,
+    fontFamily: "canada",
+    fontSize: 25,
+    borderWidth: 5,
     borderRadius: 5,
     borderColor: Colors.primary300,
     backgroundColor: Colors.accent40050,
+    textAlign: "center",
+    padding: .01
   },
 });
