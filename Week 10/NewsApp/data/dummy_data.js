@@ -4,17 +4,17 @@ export const LISTINGS = [
   new Listing(
     1,
     "US",
-    450000,
-    3,
+    "President Biden speaks of The Signing of The Declaration of Independace? He was there!?!",
+    "March 12th, 2024",
     2.5,
     2000,
-    2010,
-    "1234 Magnolia Dr",
+    "Fox",
+    "Evan Grastonian",
     "Charleston",
     "SC",
     "29401",
-    "https://cdn.houseplansservices.com/content/h0rig2dbr8vsg0fcgqco7acmul/w991x660.jpg?v=9",
-    "Beautiful 3 bedroom, 2.5 bathroom house with a spacious backyard. This charming home features hardwood floors, a gourmet kitchen with granite countertops, and a master suite with a walk-in closet. Enjoy outdoor living in the private backyard with a deck and garden area."
+    "https://e3.365dm.com/23/04/800x600/skynews-joe-biden-dublin-ireland-visit_6120393.jpg",
+    "Last night after visiting the CCU Campus located in Conway, S.C as a part of his campgain for re-election, he found himself on a rant about the Declaration of Indepencance. He began to ramble about the good ole days, and how he dared John Hancock to sign his name that big. Before the situation could get messier, his escort of secret service agents escoreted him away, by coercing him using ice cream."
   ),
   new Listing(
     2,
@@ -49,17 +49,17 @@ export const LISTINGS = [
   new Listing(
     4,
     "US",
-    80000,
-    2,
+    "CIA Director Found Knotted In a Pretzel Shape outside of a Dennys",
+    "March 8th, 2024",
     1,
     800,
-    1998,
-    "8765 Pine St",
+    "CNN",
+    "Ashley Strongman",
     "Myrtle Beach",
     "SC",
     "29577",
-    "https://mobilehomeliving.org/wp-content/uploads/modern-manufactured-home-models-foundation-700-exterior.jpg",
-    "Cozy 2 bedroom, 1 bathroom trailer with easy access to the beach. This well-maintained trailer features a spacious living area, kitchen with modern appliances, and a covered porch. Ideal for a beach getaway or rental investment."
+    "https://orig00.deviantart.net/3505/f/2007/162/a/d/human_pretzel_by_zeeknyne.jpg",
+    "The director of the CIA was found twisted and tied into a pretzel shape, this has left him emotionally damaged. The situation is still unclear how he wound up outside the Dennys or how he was tied up with his own appendages, as he provided no further information."
   ),
   new Listing(
     5,

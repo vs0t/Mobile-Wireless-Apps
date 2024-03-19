@@ -3,6 +3,7 @@ import { useState, useLayoutEffect } from "react";
 import { LISTINGS } from "../data/dummy_data";
 import BookmarkButton from "../components/BookmarkButton";
 import Colors from "../constants/colors";
+import colors from "../constants/colors";
 
 function ListingDetailScreen(props) {
   const listingId = props.route.params.listingId;
@@ -39,20 +40,18 @@ function ListingDetailScreen(props) {
 
       <View style={styles.infoContainer}>
         <Text style={styles.price}>
-          ${selectedListing.price.toLocaleString()}
+          {selectedListing.price}
         </Text>
         <Text style={styles.space}>
-          {selectedListing.bedrooms} Bed | {selectedListing.bathrooms} Bath |{" "}
-          {selectedListing.squareFeet} SqFt
+          {selectedListing.bedrooms}
         </Text>
 
         <Text style={styles.address}>
-          {selectedListing.address}, {selectedListing.city}{" "}
-          {selectedListing.state} {selectedListing.zipCode}
+          Written By: {selectedListing.address}
         </Text>
 
         <Text style={styles.year}>
-            Built: {selectedListing.yearBuilt}
+            Agency: {selectedListing.yearBuilt}
         </Text>
 
         <Text style={styles.description}>
@@ -85,14 +84,14 @@ const styles = StyleSheet.create({
   },
   price: {
     color: Colors.primary300,
-    fontSize: 35,
+    fontSize: 20,
     fontFamily: "playfairBold",
     paddingBottom: 5,
   },
   space: {
     color: Colors.primary300,
     fontSize: 25,
-    fontFamily: "playfair",
+    fontFamily: "canada",
     paddingBottom: 5,
   },
   address: {
@@ -113,7 +112,12 @@ const styles = StyleSheet.create({
     color: Colors.primary300,
     width: "90%",
     textAlign: "justify",
-    fontSize: 15,
+    fontSize: 16,
     fontFamily: "playfair",
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: "black",
+    backgroundColor: colors.primary30005,
+    padding: 2
   }
 });

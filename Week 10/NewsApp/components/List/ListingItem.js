@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import colors from "../../constants/colors";
 
 function ListingItem(props) {
   const navigation = useNavigation();
@@ -22,15 +23,15 @@ function ListingItem(props) {
           <Image style={styles.image} source={{ uri: props.imageUrl }} />
         </View>
         <View style={styles.infoContainer}>
-          <Text style={styles.price}>${props.price.toLocaleString()}</Text>
+          <Text style={styles.price}>{props.price}</Text>
           <Text style={styles.space}>
-            {props.bedrooms} Bed | {props.bathrooms} Bath | {props.squareFeet}{" "}
-            SqFt
+            {props.bedrooms}
+            
           </Text>
 
-          <Text style={styles.address}>
+          {/* <Text style={styles.address}>
             {props.address}, {props.city} {props.state} {props.zipCode}
-          </Text>
+          </Text> */}
         </View>
       </Pressable>
     </View>
@@ -56,15 +57,21 @@ const styles = StyleSheet.create({
     height: "100%",
     resizeMode: "cover",
     borderRadius: 7,
+    paddingBottom: 1,
   },
   infoContainer: {
     flex: 1,
     alignItems: "center"
   },
   price: {
-    fontSize: 35,
-    fontFamily: "playfairBold",
-    paddingBottom: 5
+    fontSize: 25,
+    fontFamily: "nolluqa",
+    alignItems: 'center',
+    padding: 5,
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: "black",
+    backgroundColor: colors.primary500o8
   },
   space: {
     fontSize: 25,

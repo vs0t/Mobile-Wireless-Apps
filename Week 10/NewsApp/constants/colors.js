@@ -6,8 +6,9 @@ const colors = {
   primary30005: "rgba(255, 255, 255, 0.5)",
   primary400: "#7F8C8D",
   primary500o8: "rgba(52, 73, 94, 0.8)",
-  primary500: "#34495E",
-  primary800: "#2C3E50",
+  primary500: "#535455",
+  primary800: "#545657",
+  primary900: "#634646"
 };
 
 export default colors;
