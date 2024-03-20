@@ -39,24 +39,18 @@ function ListingDetailScreen(props) {
       </View>
 
       <View style={styles.infoContainer}>
-        <Text style={styles.price}>
-          {selectedListing.price}
-        </Text>
-        <Text style={styles.space}>
-          {selectedListing.bedrooms}
-        </Text>
-
+        {/* title */}
+        <Text style={styles.price}>{selectedListing.price}</Text>
+        {/* date */}
+        <Text style={styles.space}>{selectedListing.bedrooms}</Text>
+        {/* area to hold author */}
         <Text style={styles.address}>
           Written By: {selectedListing.address}
         </Text>
-
-        <Text style={styles.year}>
-            Agency: {selectedListing.yearBuilt}
-        </Text>
-
-        <Text style={styles.description}>
-            {selectedListing.description}
-        </Text>
+        {/* area to hold agency */}
+        <Text style={styles.year}>Agency: {selectedListing.yearBuilt}</Text>
+        {/* area to hold description */}
+        <Text style={styles.description}>{selectedListing.description}</Text>
       </View>
     </View>
   );
@@ -118,6 +112,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: "black",
     backgroundColor: colors.primary30005,
-    padding: 2
-  }
+    padding: 2,
+  },
 });

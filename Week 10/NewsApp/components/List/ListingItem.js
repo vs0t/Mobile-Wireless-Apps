@@ -5,17 +5,17 @@ import colors from "../../constants/colors";
 function ListingItem(props) {
   const navigation = useNavigation();
 
-    function selectedListingHandler() {
-      navigation.navigate("ListingDetail", {
-        listingId: props.id,
-      });
-    }
+  function selectedListingHandler() {
+    navigation.navigate("ListingDetail", {
+      listingId: props.id,
+    });
+  }
 
   return (
     <View
       style={[
         styles.itemContainer,
-        { backgroundColor: props.listIndex % 2 == 0 ? "#ccc" : "#fff" },
+        { backgroundColor: props.listIndex % 2 == 0 ? "#ccc" : "#f1baba" },
       ]}
     >
       <Pressable onPress={selectedListingHandler}>
@@ -23,11 +23,10 @@ function ListingItem(props) {
           <Image style={styles.image} source={{ uri: props.imageUrl }} />
         </View>
         <View style={styles.infoContainer}>
+          {/* title area */}
           <Text style={styles.price}>{props.price}</Text>
-          <Text style={styles.space}>
-            {props.bedrooms}
-            
-          </Text>
+          {/* date area */}
+          <Text style={styles.space}>{props.bedrooms}</Text>
 
           {/* <Text style={styles.address}>
             {props.address}, {props.city} {props.state} {props.zipCode}
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   imageContainer: {
-    height: 300
+    height: 300,
   },
   image: {
     height: "100%",
@@ -61,28 +60,28 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
   },
   price: {
     fontSize: 25,
     fontFamily: "nolluqa",
-    alignItems: 'center',
+    alignItems: "center",
     padding: 5,
     borderWidth: 2,
     borderRadius: 5,
     borderColor: "black",
-    backgroundColor: colors.primary500o8
+    backgroundColor: colors.primary500o8,
   },
   space: {
     fontSize: 25,
     fontFamily: "playfair",
-    paddingBottom: 5
+    paddingBottom: 5,
   },
   address: {
     textAlign: "center",
     width: "100%",
     fontSize: 15,
     fontFamily: "playfair",
-    paddingBottom: 5
-  }
+    paddingBottom: 5,
+  },
 });
