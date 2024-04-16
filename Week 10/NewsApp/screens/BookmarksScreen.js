@@ -6,6 +6,7 @@ import ListingItem from "../components/List/ListingItem";
 import { StyleSheet } from "react-native";
 import colors from "../constants/colors";
 import List from "../components/List/List";
+import { saveListingsToDatabase } from "../constants/database";
 
 function BookmarksScreen() {
   const bookmarkedListingsCtx = useContext(BookmarksContext);

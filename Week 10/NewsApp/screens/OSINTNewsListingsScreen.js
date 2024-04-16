@@ -1,8 +1,8 @@
 import List from "../components/List/List";
 import { LISTINGS } from "../data/dummy_data";
 
-function UsNewsListingsScreen() {
-  const type = "US";
+function OSINTNewsListingScreen() {
+  const type = "OSINT";
   const displayedListings = LISTINGS.filter((listingItem) => {
     return listingItem.type === type;
   });
@@ -10,4 +10,4 @@ function UsNewsListingsScreen() {
   return <List items={displayedListings} />;
 }
 
-export default UsNewsListingsScreen;
+export default OSINTNewsListingScreen;

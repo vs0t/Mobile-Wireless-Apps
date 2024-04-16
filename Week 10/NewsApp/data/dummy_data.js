@@ -3,7 +3,7 @@ import Listing from "../models/listing";
 export const LISTINGS = [
   new Listing(
     1,
-    "US",
+    "Programming",
     "President Biden speaks of The Signing of The Declaration of Independace? He was there!?!",
     "March 12th, 2024",
     2.5,
@@ -19,7 +19,7 @@ export const LISTINGS = [
   ),
   new Listing(
     2,
-    "World",
+    "OSINT",
     "Tensions Escalate in Middle East Conflict",
     "February 29th, 2024",
     2,
@@ -51,7 +51,7 @@ export const LISTINGS = [
   ),
   new Listing(
     4,
-    "US",
+    "Programming",
     "CIA Director Found Knotted In a Pretzel Shape outside of a Dennys",
     "March 8th, 2024",
     1,
@@ -67,7 +67,7 @@ export const LISTINGS = [
   ),
   new Listing(
     5,
-    "World",
+    "OSINT",
     "Global Climate Summit Reaches Landmark Agreement",
     "March 15th, 2024",
     3,
@@ -99,7 +99,7 @@ export const LISTINGS = [
   ),
   new Listing(
     7,
-    "US",
+    "Programming",
     "Supreme Court Rules on Controversial Voting Rights Case",
     "February 8th, 2024",
     2.5,
@@ -115,7 +115,7 @@ export const LISTINGS = [
   ),
   new Listing(
     8,
-    "World",
+    "OSINT",
     "Widespread Protests Erupt in Major European City",
     "March 31st, 2024",
     1,
@@ -147,7 +147,7 @@ export const LISTINGS = [
   ),
   new Listing(
     10,
-    "US",
+    "Programming",
     "Historic NASA Mission Prepares for Launch",
     "January 12th, 2024",
     2,
@@ -163,7 +163,7 @@ export const LISTINGS = [
   ),
   new Listing(
     11,
-    "World",
+    "OSINT",
     "Global Health Crisis Sparks International Collaboration",
     "December 25th, 2023",
     2.5,

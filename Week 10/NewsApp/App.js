@@ -7,10 +7,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BookmarksScreen from "./screens/BookmarksScreen";
-import WorldNewsListingScreen from "./screens/WorldNewsListingsScreen";
 import ListingDetailScreen from "./screens/ListingDetailScreen";
 import SoccerListingsScreen from "./screens/SoccerNewsListingsScreen";
-import UsNewsListingsScreen from "./screens/UsNewsListingsScreen";
+import ProgrammingNewsListingsScreen from "./screens/ProgrammingNewsListingsScreen";
 import Colors from "./constants/colors";
 import { Entypo } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -18,6 +17,8 @@ import { FontAwesome } from "@expo/vector-icons";
 import { useCallback } from "react";
 import BookmarksContextProvider from "./store/context/bookmarks-context";
 import SearchScreen from "./screens/SearchScreen";
+import { FontAwesome6 } from '@expo/vector-icons';
+import OSINTNewsListingScreen from "./screens/OSINTNewsListingsScreen";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -87,25 +88,25 @@ function TabsNavigator() {
       }}
     >
       <Tabs.Screen
-        name="USNews"
-        component={UsNewsListingsScreen}
+        name="ProgrammingNews"
+        component={ProgrammingNewsListingsScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="flag-usa" size={size} color={color} />
+            <Entypo name="code" size={size} color={color} />
           ),
-          tabBarLabel: "U.S News",
+          tabBarLabel: "Code News",
         }}
       />
       <Tabs.Screen
-        name="WorldNews"
-        component={WorldNewsListingScreen}
+        name="OSINTNews"
+        component={OSINTNewsListingScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Entypo name="globe" size={size} color={color} />
+            <FontAwesome6 name="hackerrank" size={size} color={color} />
           ),
-          tabBarLabel: "World News",
+          tabBarLabel: "OSINT News",
         }}
       />
       <Tabs.Screen
