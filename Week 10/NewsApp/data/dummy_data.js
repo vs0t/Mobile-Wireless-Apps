@@ -4,7 +4,7 @@ export const LISTINGS = [
   new Listing(
     1,
     "Programming",
-    "President Biden speaks of The Signing of The Declaration of Independace? He was there!?!",
+    "President Biden Confuses JavaScript with Java during Tech Summit",
     "March 12th, 2024",
     2.5,
     2000,
@@ -14,13 +14,13 @@ export const LISTINGS = [
     "SC",
     "29401",
     "https://e3.365dm.com/23/04/800x600/skynews-joe-biden-dublin-ireland-visit_6120393.jpg",
-    "Last night after visiting the CCU Campus located in Conway, S.C as a part of his campgain for re-election, he found himself on a rant about the Declaration of Indepencance. He began to ramble about the good ole days, and how he dared John Hancock to sign his name that big. Before the situation could get messier, his escort of secret service agents escoreted him away, by coercing him using ice cream.",
+    "During a recent tech summit, President Biden sparked confusion when he referred to JavaScript as Java, leaving the audience puzzled. The gaffe quickly went viral on social media, with developers and tech enthusiasts poking fun at the mix-up.",
     "https://www.foxnews.com"
   ),
   new Listing(
     2,
     "OSINT",
-    "Tensions Escalate in Middle East Conflict",
+    "Satellite Imagery Reveals Covert Military Buildup in Disputed Region",
     "February 29th, 2024",
     2,
     1200,
@@ -30,7 +30,7 @@ export const LISTINGS = [
     "SC",
     "29201",
     "https://i.guim.co.uk/img/media/f1b9c75a425e52f9420323f9c4dbd5bd9a63e71a/0_234_3504_2102/master/3504.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=98c292d79e90edcb4cee98a9cb4ddc43",
-    "The long-standing conflict in the Middle East has taken a concerning turn, with reports of escalating tensions and military buildup along the borders. The international community is urging restraint and calling for diplomatic efforts to avoid further violence.",
+    "Open-source intelligence analysts have discovered evidence of a covert military buildup in a disputed region using satellite imagery. The findings suggest escalating tensions and potential for armed conflict, prompting calls for international intervention and diplomacy.",
     "https://www.tmz.com"
   ),
   new Listing(
@@ -52,7 +52,7 @@ export const LISTINGS = [
   new Listing(
     4,
     "Programming",
-    "CIA Director Found Knotted In a Pretzel Shape outside of a Dennys",
+    "Google Introduces Revolutionary Quantum Programming Language",
     "March 8th, 2024",
     1,
     800,
@@ -61,25 +61,25 @@ export const LISTINGS = [
     "Myrtle Beach",
     "SC",
     "29577",
-    "https://orig00.deviantart.net/3505/f/2007/162/a/d/human_pretzel_by_zeeknyne.jpg",
-    "The director of the CIA was found twisted and tied into a pretzel shape, this has left him emotionally damaged. The situation is still unclear how he wound up outside the Dennys or how he was tied up with his own appendages, as he provided no further information.",
+    "https://wallpaperaccess.com/full/314785.jpg",
+    "Google has unveiled a groundbreaking quantum programming language that promises to revolutionize the field of quantum computing. The new language, designed to be intuitive and accessible to developers, aims to accelerate the development of quantum algorithms and applications.",
     "https://www.cnn.com"
   ),
   new Listing(
     5,
     "OSINT",
-    "Global Climate Summit Reaches Landmark Agreement",
+    "Social Media Analysis Uncovers Coordinated Disinformation Campaign",
     "March 15th, 2024",
     3,
     2500,
-    "Fox News",
+    "Bellingcat",
     "Charles Barkley",
     "Hilton Head Island",
     "SC",
     "29926",
-    "https://cdn.lifegate.it/SyQR5My565aknl_WtZp8sI-fqS8=/1920x0/smart/https://www.lifegate.it/app/uploads/Globale%2520Climate%2520Action%2520Summit%25203.jpg",
-    "After weeks of intense negotiations, world leaders have reached a historic agreement at the Global Climate Summit aimed at reducing greenhouse gas emissions and promoting sustainable practices. The deal sets ambitious targets and outlines a roadmap for international cooperation.",
-    "https://www.foxnews.com"
+    "https://th.bing.com/th/id/OIP.RUeAzy9NwD4pjPare-fsBAHaHa?rs=1&pid=ImgDetMain",
+    "OSINT researchers have uncovered a coordinated disinformation campaign targeting political discourse on social media platforms. The sophisticated network of fake accounts and manipulated content aims to sway public opinion and undermine democratic processes.",
+    "https://www.bellingcat.com"
   ),
   new Listing(
     6,
@@ -100,7 +100,7 @@ export const LISTINGS = [
   new Listing(
     7,
     "Programming",
-    "Supreme Court Rules on Controversial Voting Rights Case",
+    "Supreme Court Rules on Fair Use in Landmark API Copyright Case",
     "February 8th, 2024",
     2.5,
     1600,
@@ -110,24 +110,24 @@ export const LISTINGS = [
     "SC",
     "29730",
     "https://th.bing.com/th?id=OSK.HEROz4W5Tg_BnwX7kbszW38anO4In3KBQTd6uUlt6nKtX7E&w=312&h=200&c=15&rs=2&o=6&pid=SANGAM",
-    "The United States Supreme Court has issued a landmark ruling on a controversial voting rights case, with implications for future elections. The decision has sparked heated debates and protests from both sides of the political spectrum.",
+    "The United States Supreme Court has issued a landmark ruling on fair use in a high-profile case involving API copyrights. The decision has far-reaching implications for the software industry, setting a precedent for the legal protection of APIs and their use in software development.",
     "https://www.foxnews.com"
   ),
   new Listing(
     8,
     "OSINT",
-    "Widespread Protests Erupt in Major European City",
+    "Investigative Report Exposes Corruption Scandal Using Public Records",
     "March 31st, 2024",
     1,
     700,
-    "Yahoo News",
+    "ProPublica",
     "John Google",
     "Spartanburg",
     "SC",
     "29301",
-    "https://ichef.bbci.co.uk/news/976/cpsprodpb/255F/production/_110476590_gettyimages-1193083618.jpg",
-    "A major European city has been gripped by widespread protests, with thousands taking to the streets to voice their discontent over economic policies and government actions. The protests have turned violent in some areas, prompting concerns about public safety.",
-    "https://news.yahoo.com"
+    "https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/03/03/13/corruption.jpg",
+    "An in-depth investigative report has exposed a major corruption scandal involving high-ranking officials, using a trove of public records and documents obtained through OSINT techniques. The findings shed light on a web of illicit activities and abuse of power.",
+    "https://www.propublica.org"
   ),
   new Listing(
     9,
@@ -148,7 +148,7 @@ export const LISTINGS = [
   new Listing(
     10,
     "Programming",
-    "Historic NASA Mission Prepares for Launch",
+    "NASA Open Sources Mars Rover Software for Public Collaboration",
     "January 12th, 2024",
     2,
     1100,
@@ -158,24 +158,24 @@ export const LISTINGS = [
     "SC",
     "29483",
     "https://th.bing.com/th/id/OIP.2m9aX7OiEgNBuwT724iDUwHaE8?rs=1&pid=ImgDetMain",
-    "NASA is gearing up for the launch of its most ambitious mission to date, aiming to explore uncharted regions of our solar system. The historic endeavor has captured global attention, with scientists and space enthusiasts eagerly anticipating new discoveries.",
+    "NASA has made a significant portion of its Mars rover software open source, inviting the public to collaborate and contribute to the ongoing exploration of the Red Planet. The move aims to foster innovation, transparency, and engagement with the global scientific community.",
     "https://www.nytimes.com/"
   ),
   new Listing(
     11,
     "OSINT",
-    "Global Health Crisis Sparks International Collaboration",
+    "Geolocation Analysis Tracks Illegal Wildlife Trafficking Networks",
     "December 25th, 2023",
     2.5,
     1700,
-    "Yahoo News",
+    "National Geographic",
     "Jason Fulp",
     "Anderson",
     "SC",
     "29621",
-    "https://th.bing.com/th/id/OIP.Ft1hhKAZ519Ar0NuAWR_zgHaHa?rs=1&pid=ImgDetMain",
-    "In the face of a rapidly spreading global health crisis, nations around the world have joined forces to coordinate efforts and share resources. The international collaboration aims to combat the outbreak and develop effective treatments and preventive measures.",
-    "https://news.yahoo.com"
+    "https://images.ctfassets.net/pjshm78m9jt4/62176_header/1ed89abb1c907a6852aea0bc9fc5aa78/importedImage62176_header",
+    "OSINT analysts have utilized advanced geolocation techniques to track and uncover illegal wildlife trafficking networks operating across international borders. The findings contribute to conservation efforts and law enforcement operations to combat the illicit trade of endangered species.",
+    "https://www.nationalgeographic.com"
   ),
   new Listing(
     12,

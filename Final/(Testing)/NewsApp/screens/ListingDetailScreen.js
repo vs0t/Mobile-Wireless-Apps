@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Linking } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { useState, useLayoutEffect, useContext } from "react";
 import { LISTINGS } from "../data/dummy_data";
 import BookmarkButton from "../components/BookmarkButton";
@@ -55,14 +55,7 @@ function ListingDetailScreen(props) {
           Written By: {selectedListing.address}
         </Text>
         {/* area to hold agency */}
-        <Text
-          style={styles.year}
-          onPress={() => {
-            Linking.openURL(selectedListing.agencyUrl);
-          }}
-        >
-          Agency: {selectedListing.yearBuilt}
-        </Text>
+        <Text style={styles.year}>Agency: {selectedListing.yearBuilt}</Text>
         {/* area to hold description */}
         <Text style={styles.description}>{selectedListing.description}</Text>
       </View>

@@ -15,23 +15,17 @@ function SearchScreen() {
   const uniqueAgencies = [...new Set(LISTINGS.map((listing) => listing.yearBuilt))];
 
   const handleSearch = () => {
-  const titleRegex = /^[a-zA-Z0-9\s]*$/;
-  if (!titleRegex.test(searchTitle)) {
-    alert('Search title should only contain letters and numbers.');
-    return;
-  }
+    const filteredResults = LISTINGS.filter((listing) => {
+      const { price, address, yearBuilt } = listing;
+      const titleMatch = price.toString().toLowerCase().includes(searchTitle.toLowerCase());
+      const authorMatch = selectedAuthor ? address === selectedAuthor : true;
+      const agencyMatch = selectedAgency ? yearBuilt === selectedAgency : true;
 
-  const filteredResults = LISTINGS.filter((listing) => {
-    const { price, address, yearBuilt } = listing;
-    const titleMatch = price.toString().toLowerCase().includes(searchTitle.toLowerCase());
-    const authorMatch = selectedAuthor ? address === selectedAuthor : true;
-    const agencyMatch = selectedAgency ? yearBuilt === selectedAgency : true;
+      return titleMatch && authorMatch && agencyMatch;
+    });
 
-    return titleMatch && authorMatch && agencyMatch;
-  });
-
-  setSearchResults(filteredResults);
-};
+    setSearchResults(filteredResults);
+  };
 
   const renderListingItem = ({ item }) => {
     const listingItemProps = {
@@ -130,7 +124,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   searchButton: {
-    backgroundColor: colors.primary900,
+    backgroundColor: 'blue',
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 4,

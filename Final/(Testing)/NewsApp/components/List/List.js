@@ -17,7 +17,6 @@ function List(props) {
       imageUrl: itemData.item.imageUrl,
       description: itemData.item.description,
       listIndex: itemData.index,
-      agencyUrl: itemData.agencyUrl,
     };
     return <ListingItem {...listingItemProps} />;
   }

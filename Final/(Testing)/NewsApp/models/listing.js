@@ -12,8 +12,7 @@ class Listing {
       state,
       zipCode,
       imageUrl,
-      description,
-      agencyUrl,
+      description
     ) {
       this.id = id;
       this.type = type;
@@ -28,7 +27,6 @@ class Listing {
       this.zipCode = zipCode;
       this.imageUrl = imageUrl;
       this.description = description;
-      this.agencyUrl = agencyUrl;
     }
   
     toString() {
