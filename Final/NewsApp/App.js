@@ -19,6 +19,7 @@ import BookmarksContextProvider from "./store/context/bookmarks-context";
 import SearchScreen from "./screens/SearchScreen";
 import { FontAwesome6 } from '@expo/vector-icons';
 import OSINTNewsListingScreen from "./screens/OSINTNewsListingsScreen";
+import SubmitNewsScreen from "./screens/SubmitNewsScreen";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -129,6 +130,17 @@ function TabsNavigator() {
             <FontAwesome5 name="search" size={size} color={color} />
           ),
           tabBarLabel: "Search News",
+        }}
+      />
+      <Tabs.Screen
+        name="SubmitNews"
+        component={SubmitNewsScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="add-to-list" size={size} color={color} />
+          ),
+          tabBarLabel: "Submit News",
         }}
       />
     </Tabs.Navigator>
